@@ -68,18 +68,6 @@
             ctrl.enqueue(file2)
             ctrl.enqueue(file3)
             ctrl.enqueue({name: 'streamsaver-zip-example/empty folder', directory: true})
-            // ctrl.close()
-          },
-          async pull (ctrl) {
-			// Gets executed everytime zip.js asks for more data
-            const url = 'https://d8d913s460fub.cloudfront.net/videoserver/cat-test-video-320x240.mp4'
-            const res = await fetch(url)
-            const stream = () => res.body
-            const name = 'streamsaver-zip-example/cat.mp4'
-
-            ctrl.enqueue({ name, stream })
-			  
-			// if (done adding all files)
             ctrl.close()
           }
         })
